@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: 35px auto;
+    place-items: center start;
+
+    .label {
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: auto auto 20px;
+        place-items: center;
+
+        .count {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+}

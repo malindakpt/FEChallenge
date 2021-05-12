@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component onLabelClick callback on label click 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+    <Memo(ForwardRef(ArrowDropUpIcon))
+      id="upArrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Select Component onSelectionChange callback on checkbox change 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+    <Memo(ForwardRef(ArrowDropUpIcon))
+      id="upArrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Select Component renders count span with the brackets 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+    <Memo(ForwardRef(ArrowRightIcon))
+      id="rightArrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Select Component renders elements without crashing 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+    <Memo(ForwardRef(ArrowDropUpIcon))
+      id="upArrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Select Component renders name span with the correct name 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+    <Memo(ForwardRef(ArrowRightIcon))
+      id="rightArrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Select Component renders non of the arrows when Select is not expandable 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Select Component renders rightArrow when not expanded 1`] = `
+<div
+  className="container"
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={true}
+    color="primary"
+    id="checkbox"
+    onChange={[Function]}
+  />
+  <div
+    className="label"
+    id="label"
+    onClick={[Function]}
+  >
+    <span
+      id="name"
+    >
+      label1
+    </span>
+    <span
+      className="count"
+      id="count"
+    >
+      (
+      10
+      )
+    </span>
+    <Memo(ForwardRef(ArrowRightIcon))
+      id="rightArrow"
+    />
+  </div>
+</div>
+`;
