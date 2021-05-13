@@ -44,6 +44,7 @@ export class NodeFactory {
             delete rootNode.children[item.id];
         });
 
+        console.log('Node tree generated');
         return rootNode;
     }
 }
