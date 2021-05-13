@@ -31,7 +31,7 @@ export class NodeFactory {
             if (this.nodeById[item.parent]) {
                 this.nodeById[item.parent].children[item.id] = newNode;
             } else {
-                // Create a new node for the parent
+                // Create a new node for the parent with temp values
                 const newParentNode = this.getOrCreateNode({
                     id: item.parent,
                     name: `Tree Root Node ${item.parent}`,

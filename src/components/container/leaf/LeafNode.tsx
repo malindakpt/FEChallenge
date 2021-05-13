@@ -10,7 +10,7 @@ interface Props {
     onChildrenSelectionChange: (isSelected: boolean) => void;
 }
 
-export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelectionChange }: Props) => {
+export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange }: Props) => {
     const [showChildren, setShowChildren] = useState(false);
     const children = Object.values(node.children);
     const reRender = useForcedRender();
@@ -23,7 +23,7 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
     // Select all the children nodes when a parent node is selected
     const handleSelectionChange = (isSelected: boolean) => {
         node.setSelectedStatusOfAllChildren(isSelected);
-        onSelectionChange(isSelected);
+        onChildrenSelectionChange(isSelected);
         reRender();
     };
 
@@ -34,7 +34,7 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
         // Propagate the event to parent level, only if the selected state of this node is changed
         if (newSelectedStateForThisNode !== node.isSelected) {
             node.isSelected = newSelectedStateForThisNode;
-            onSelectionChange(newSelectedStateForThisNode);
+            onChildrenSelectionChange(newSelectedStateForThisNode);
             reRender();
         }
     };
