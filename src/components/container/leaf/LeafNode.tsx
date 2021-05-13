@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { Node } from '../../../entities/Node';
 import { useForcedRender } from '../../../hooks/useForcedRender';
 import { Select } from '../../presentational/select/Select';
@@ -10,7 +10,7 @@ interface Props {
     onChildrenSelectionChange: (isSelected: boolean) => void;
 }
 
-export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelectionChange }: Props) => {
+export const LeafNode: FC<Props> = memo(({ node, onChildrenSelectionChange: onSelectionChange }: Props) => {
     const [showChildren, setShowChildren] = useState(false);
     const children = Object.values(node.children);
     const reRender = useForcedRender();
@@ -35,9 +35,11 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
         if (newSelectedStateForThisNode !== node.isSelected) {
             node.isSelected = newSelectedStateForThisNode;
             onSelectionChange(newSelectedStateForThisNode);
+            reRender();
         }
-        reRender();
     };
+
+    console.log(node.name);
 
     return (
         <div className={classes.container}>
@@ -63,4 +65,5 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
             </div>
         </div>
     );
-};
+});
+LeafNode.displayName = 'MemoLeafNode';
