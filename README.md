@@ -4,7 +4,7 @@ Facets are subset of filtering and help users to quickly refine their options wi
 <br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![image](https://user-images.githubusercontent.com/1351502/113556802-a1097600-961a-11eb-8861-a58c25484976.png)
+![image](https://user-images.githubusercontent.com/1351502/118091595-a1025000-b3e8-11eb-8259-5f73eaff86ac.png)
 
 
 ## Additional Features
