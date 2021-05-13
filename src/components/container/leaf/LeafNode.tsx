@@ -31,7 +31,7 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
     const handleChildrenSelectionChange = () => {
         const newSelectedStateForThisNode = node.isAllChildrenSelected();
 
-        // Propagate the event to parent level only if the selected state of this node is changed
+        // Propagate the event to parent level, only if the selected state of this node is changed
         if (newSelectedStateForThisNode !== node.isSelected) {
             node.isSelected = newSelectedStateForThisNode;
             onSelectionChange(newSelectedStateForThisNode);
@@ -40,7 +40,7 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
     };
 
     return (
-        <div>
+        <div className={classes.container}>
             <Select
                 name={node.name}
                 count={node.count}
@@ -52,7 +52,7 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
             />
             <div className={showChildren ? classes.show : classes.hide}>
                 {children.map((child) => (
-                    <div key={child.id} className={classes.container}>
+                    <div key={child.id}>
                         <LeafNode
                             node={child}
                             visibility={showChildren}
