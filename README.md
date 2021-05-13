@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Preserve the expand/collapse state of children nodes when root nodes are expanded/collapsed.
 - Show arrow indicators to indicate the expand/collapse state of nodes.
 - Hide arrow indicators when children are not exists for the node.
-- Parent node is automatically selected when all the children are selected.
+- Parent nodes are automatically selected when all the children are selected.
 - Parent node selection is automatically cleared when a selection of any child is cleared.
 - Minimal number of nodes are re-rendered when a node status is changed.
 
@@ -25,7 +25,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Any state management frameworks are not used for this, since state can be handle by the component state itself.
 
 ## Future Optimizations
-Optimize the `handleChildrenSelectionChange` logic at the `LeafNode.tsx` to minimize the re-render attempts.
+Optimize the re-render cycles by using memoized components
 
 ## Available Scripts
 In the project directory, you can run:
