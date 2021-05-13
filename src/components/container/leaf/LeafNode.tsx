@@ -50,7 +50,7 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange: onSelecti
                 onSelectionChange={handleSelectionChange}
                 onLabelClick={handleOnLabelClick}
             />
-            <div style={{ display: showChildren ? 'block' : 'none' }}>
+            <div className={showChildren ? classes.show : classes.hide}>
                 {children.map((child) => (
                     <div key={child.id} className={classes.container}>
                         <LeafNode
