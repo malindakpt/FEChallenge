@@ -31,17 +31,20 @@ export class NodeFactory {
             if (this.nodeById[item.parent]) {
                 this.nodeById[item.parent].children[item.id] = newNode;
             } else {
-                // Add Gender as the name of the root
-                rootNode.children[item.parent] = this.getOrCreateNode({
+                // Create a new node for the parent
+                const newParentNode = this.getOrCreateNode({
                     id: item.parent,
-                    name: `Gender ${item.parent}`,
+                    name: `Tree Root Node ${item.parent}`,
                     parent: rootNode.id,
                     count: 0,
                 });
-                rootNode.children[item.parent].children[item.id] = newNode;
+                newParentNode.children[item.id] = newNode;
+                rootNode.children[item.parent] = newParentNode;
             }
-            // Remove the newNode from rootNode since it might be already added as a rootNode
-            delete rootNode.children[item.id];
+            // Remove the newNode from rootNode if it is added as a Tree Root Node
+            if (rootNode.children[item.id]) {
+                delete rootNode.children[item.id];
+            }
         });
 
         console.log('Node tree generated');
