@@ -41,18 +41,10 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange }: Props) 
 
     return (
         <div className={classes.container}>
-            <Select
-                name={node.name}
-                count={node.count}
-                isSelected={node.isSelected}
-                isExpanded={showChildren}
-                isExpandable={Object.keys(node.children).length > 0}
-                onSelectionChange={handleSelectionChange}
-                onLabelClick={handleOnLabelClick}
-            />
+            <Select node={node} onSelectionChange={handleSelectionChange} onLabelClick={handleOnLabelClick} />
             <div className={showChildren ? classes.show : classes.hide}>
                 {children.map((child) => (
-                    <div key={child.id}>
+                    <div key={child.value}>
                         <LeafNode
                             node={child}
                             visibility={showChildren}
