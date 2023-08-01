@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+// import Checkbox from '@material-ui/core/Checkbox';
+import MinusIcon from '../../../icons/minus.svg';
+import PlusIcon from '../../../icons/plus.svg';
 import classes from './Select.module.scss';
 import { Node } from '../../../entities/Node';
 
@@ -21,15 +21,15 @@ export const Select: FC<Props> = ({
 
     return (
         <div className={classes.container}>
-            <Checkbox id="checkbox" checked={node.isSelected} onChange={handleChange} color="primary" />
-
+            {/* <Checkbox id="checkbox" checked={node.isSelected} onChange={handleChange} color="primary" /> */}
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked={node.isSelected} onChange={handleChange}></input>
             <div id="label" className={classes.label} onClick={() => onLabelClick()}>
                 <span id="name">{node.label}</span>
                 <span id="count" className={classes.count}>
                     ({node.children?.length})
                 </span>
                 {node.children?.length > 0 && (
-                    <>{node.isExpanded ? <ArrowDropUpIcon id="upArrow" /> : <ArrowRightIcon id="rightArrow" />}</>
+                    <>{node.isExpanded ? <img width={12} src={MinusIcon} /> : <img width={12} src={PlusIcon} />}</>
                 )}
             </div>
         </div>
