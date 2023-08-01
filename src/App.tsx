@@ -13,6 +13,49 @@ const nodes: INode[] = [{
             children: [],
             isSelected: false,
             isExpanded: false,
+        },
+        {
+            value: 'q1',
+            label: 'q1',
+            children: [],
+            isSelected: false,
+            isExpanded: false,
+        }
+    ],
+    isSelected: false,
+    isExpanded: false,
+},
+{
+    value: 'ch2',
+    label: 'ch2',
+    children: [
+        {
+            value: 'root1',
+            label: 'root2',
+            children: [
+                {
+                    value: 'root1',
+                    label: 'root2',
+                    children: [],
+                    isSelected: false,
+                    isExpanded: false,
+                },
+                {
+                    value: 'q1',
+                    label: 'q1',
+                    children: [],
+                    isSelected: false,
+                    isExpanded: false,
+                }],
+            isSelected: false,
+            isExpanded: true,
+        },
+        {
+            value: 'q1',
+            label: 'q1',
+            children: [],
+            isSelected: false,
+            isExpanded: false,
         }
     ],
     isSelected: true,
@@ -21,19 +64,12 @@ const nodes: INode[] = [{
 
 export const App: FC = () => {
 
-    const node = new Node('Parts', 'adasd', false, false, undefined, nodes);
+    const nodeArr = nodes.map(n => new Node(n.label, n.value, n.isSelected, n.isExpanded, undefined, n.children))
     const handleSelectionChange = () => {
         // Do nothing
     };
 
-    return (
-        <div>
-            <LeafNode node={node} visibility onChildrenSelectionChange={handleSelectionChange} />
-            {/* {nodes.map((node) => (
-                <LeafNode key={node.value} node={node} visibility onChildrenSelectionChange={handleSelectionChange} />
-            ))} */}
-        </div>
-    );
+    return  <>{nodeArr.map( n => <LeafNode node={n} visibility onChildrenSelectionChange={handleSelectionChange} />)}</>;
 };
 
 export default App;

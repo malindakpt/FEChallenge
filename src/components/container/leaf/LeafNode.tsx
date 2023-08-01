@@ -11,13 +11,14 @@ interface Props {
 }
 
 export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange }: Props) => {
-    const [showChildren, setShowChildren] = useState(false);
-    const children = Object.values(node.children);
+
     const reRender = useForcedRender();
 
     // Show/Hide the children when click on the label
     const handleOnLabelClick = () => {
-        setShowChildren((prev) => !prev);
+        // setShowChildren((prev) => !prev);
+        node.isExpanded = !node.isExpanded;
+        reRender();
     };
 
     // Select all the children nodes when a parent node is selected
@@ -42,12 +43,12 @@ export const LeafNode: FC<Props> = ({ node, onChildrenSelectionChange }: Props) 
     return (
         <div className={classes.container}>
             <Select node={node} onSelectionChange={handleSelectionChange} onLabelClick={handleOnLabelClick} />
-            <div className={showChildren ? classes.show : classes.hide}>
-                {children.map((child) => (
+            <div className={node.isExpanded  ? classes.show : classes.hide}>
+                {node.children.map((child) => (
                     <div key={child.value}>
                         <LeafNode
                             node={child}
-                            visibility={showChildren}
+                            visibility={node.isExpanded}
                             onChildrenSelectionChange={handleChildrenSelectionChange}
                         ></LeafNode>
                     </div>

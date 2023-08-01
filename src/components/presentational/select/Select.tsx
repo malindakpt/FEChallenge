@@ -7,18 +7,11 @@ import { Node } from '../../../entities/Node';
 
 interface Props {
     node: Node;
-    // value: string;
-    // label: string;
-    // count: number;
-    // isSelected: boolean;
-    // isExpanded: boolean;
-    // isExpandable: boolean;
     onLabelClick: () => void;
     onSelectionChange: (isSelected: boolean, node: Node) => void;
 }
 export const Select: FC<Props> = ({
     node,
-    // isExpandable,
     onLabelClick,
     onSelectionChange,
 }: Props) => {
