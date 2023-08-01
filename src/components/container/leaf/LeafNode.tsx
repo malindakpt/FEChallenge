@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Node } from '../../../entities/Node';
 import { useForcedRender } from '../../../hooks/useForcedRender';
 import { Select } from '../../presentational/select/Select';

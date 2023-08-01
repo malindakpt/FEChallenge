@@ -1,5 +1,4 @@
 import { FC } from 'react';
-// import Checkbox from '@material-ui/core/Checkbox';
 import MinusIcon from '../../../icons/minus.svg';
 import PlusIcon from '../../../icons/plus.svg';
 import classes from './Select.module.scss';
@@ -21,7 +20,6 @@ export const Select: FC<Props> = ({
 
     return (
         <div className={classes.container}>
-            {/* <Checkbox id="checkbox" checked={node.isSelected} onChange={handleChange} color="primary" /> */}
             <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked={node.isSelected} onChange={handleChange}></input>
             <div id="label" className={classes.label} onClick={() => onLabelClick()}>
                 <span id="name">{node.label}</span>
